@@ -1,0 +1,422 @@
+/* ==========================================================================
+   1. SETUP EXCLUSIVO & DESIGN SYSTEM (CYBER-ORGANIC)
+   ========================================================================== */
+:root {
+    --bg-deep: #030d06;
+    --bg-card: rgba(6, 22, 11, 0.45);
+    --cyber-emerald: #00FF66;
+    --tech-green: #00E5FF;
+    --earth-gold: #E5A93C;
+    --off-white: #F4F7F5;
+    --glass-blur: blur(20px);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition-epic: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-deep);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--cyber-emerald), var(--earth-gold));
+    border-radius: 20px;
+}
+
+/* Utilitários Globais de Efeito */
+.text-gradient {
+    background: linear-gradient(135deg, #FFF 10%, var(--cyber-emerald) 60%, var(--tech-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-headline {
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.section-headline span {
+    color: var(--cyber-emerald);
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.section-headline h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+/* Componente de Animação de Entrada (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. NAVIGATION DESIGN (GLASSMORPHIC HEADER)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 1600px;
+    height: 80px;
+    background: rgba(4, 15, 7, 0.6);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(0, 255, 102, 0.15);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--off-white);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--cyber-emerald);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(244, 247, 245, 0.6);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition-epic);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--cyber-emerald);
+    text-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+}
+
+.btn-telemetria {
+    background: linear-gradient(135deg, var(--cyber-emerald), #00b347);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-epic);
+}
+
+.btn-telemetria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.6);
+}
+
+.progress-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: calc(100% - 80px);
+    height: 2px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cyber-emerald), var(--tech-green));
+}
+
+/* ==========================================================================
+   3. CINEMATIC HERO LAYER (MAQUINÁRIO PESADO & DRONES)
+   ========================================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 80px 40px;
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(3, 13, 6, 0.5) 0%, rgba(3, 13, 6, 0.95) 100%), 
+                url('https://unsplash.com') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    transform: scale(1.05);
+}
+
+.hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1300px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero-badge {
+    background: rgba(0, 255, 102, 0.06);
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    color: var(--cyber-emerald);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 30px rgba(0, 255, 102, 0.1);
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -3px;
+    margin-bottom: 32px;
+}
+
+.hero-desc {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    color: rgba(244, 247, 245, 0.7);
+    max-width: 800px;
+    margin: 0 auto 56px auto;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.btn-epic-primary {
+    background: linear-gradient(135deg, var(--cyber-emerald), var(--earth-gold));
+    color: #030d06;
+    border: none;
+    padding: 22px 48px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition-epic);
+    box-shadow: 0 20px 40px rgba(0,255,102,0.2);
+}
+
+.btn-epic-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,255,102,0.4);
+}
+
+/* ==========================================================================
+   4. INTERACTIVE BENTO GRID
+   ========================================================================== */
+.bento-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 140px 40px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 360px;
+    gap: 32px;
+}
+
+.bento-w2 { grid-column: span 2; }
+.bento-h2 { grid-row: span 2; }
+
+.bento-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 40px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: var(--transition-epic);
+    cursor: pointer;
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(3, 13, 6, 1) 15%, rgba(3, 13, 6, 0.4) 65%, transparent 100%);
+    z-index: 2;
+}
+
+.bento-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    transition: var(--transition-epic);
+    z-index: 1;
+    filter: contrast(1.15) brightness(0.85);
+}
+
+.bento-content {
+    position: relative;
+    z-index: 3;
+}
+
+.bento-tag {
+    color: var(--cyber-emerald);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.bento-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.bento-card p {
+    color: rgba(244, 247, 245, 0.6);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 620px;
+    font-weight: 300;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 102, 0.3);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8), inset 0 1px 2px rgba(0, 255, 102, 0.2);
+}
+
+.bento-card:hover .bento-media {
+    transform: scale(1.05);
+    opacity: 0.55;
+}
+
+/* ==========================================================================
+   5. DATA VISUALIZATION OPERACIONAL
+   ========================================================================== */
+.metrics-section {
+    background: linear-gradient(180deg, var(--bg-deep) 0%, #020703 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 120px 40px;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.matrix-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 32px;
+    padding: 50px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-epic);
+}
+
+.matrix-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyber-emerald), var(--tech-green));
+    opacity: 0;
