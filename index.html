@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 | Agro Forte, Futuro Sustentável</title>
+    <!-- Google Fonts de Alta Grife -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Importação do arquivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. GLASSMORPHIC MONITOR NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo">AGRINHO<span>2026</span></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Painel Geral</a></li>
+            <li><a href="#maquinas">Frota & Tecnologia</a></li>
+            <li><a href="#telemetria">Telemetria</a></li>
+        </ul>
+        <button class="btn-telemetria">Iniciar Diagnóstico</button>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="readingProgress"></div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO EXPERIENCE CINEMATOGRÁFICA -->
+    <section class="hero" id="home">
+        <div class="hero-video-bg"></div>
+        <canvas id="droneGridCanvas" class="hero-canvas"></canvas>
+        
+        <div class="hero-content">
+            <span class="hero-badge reveal">Ecossistema Autônomo Ativo</span>
+            <h1 class="hero-title reveal">Agro Forte.<br><span class="text-gradient">Futuro Sustentável.</span></h1>
+            <p class="hero-desc reveal">
+                A potência das colheitadeiras pesadas unida à inteligência invisível dos enxames de drones. Conecte-se à maior infraestrutura bio-digital da história do campo.
+            </p>
+            <div class="hero-actions reveal">
+                <button class="btn-epic-primary" onclick="document.getElementById('maquinas').scrollIntoView();">Acessar Frota Conectada</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTERACTIVE BENTO GRID -->
+    <main class="bento-container" id="maquinas">
+        <div class="section-headline reveal">
+            <span>Operações Automatizadas de Larga Escala</span>
+            <h2>Inovação sob Comando</h2>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Bloco 1: Maquinário Conectado e Pesado (Grande Horizontal) -->
+            <div class="bento-card bento-w2 reveal">
+                <div class="bento-media" style="background-image: url('https://unsplash.com');"></div>
+                <div class="bento-content">
+                    <span class="bento-tag">Frota Exponencial</span>
+                    <h3>Maquinário Autônomo de Alta Potência</h3>
+                    <p>Tratores e colheitadeiras inteligentes guiados por satélite operam com precisão milimétrica sem interrupções, otimizando o combustível e eliminando o desperdício de solo.</p>
+                </div>
+            </div>
+
+            <!-- Bloco 2: Enxame de Drones (Alto Vertical) -->
+            <div class="bento-card bento-h2 reveal">
+                <div class="bento-media" style="background-image: url('https://unsplash.com');"></div>
+                <div class="bento-content" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <span class="bento-tag">Monitoramento Aéreo</span>
+                    <h3>Enxames de Drones Espectrais</h3>
+                    <p>Verdadeiras patrulhas aéreas que sobrevoam milhares de hectares em minutos, detectando anomalias térmicas e focos de pragas antes mesmo que fiquem visíveis a olho nu.</p>
+                </div>
+            </div>
+
+            <!-- Bloco 3: Sensores IoT -->
+            <div class="bento-card reveal">
+                <div class="bento-media" style="background-image: url('https://unsplash.com');"></div>
+                <div class="bento-content">
+                    <span class="bento-tag">Inteligência Subterrânea</span>
+                    <h3>Telemetria de Raiz</h3>
+                    <p>Sensores conectados diretamente no solo analisam a atividade microbiológica da plantação e transmitem dados instantâneos para a nuvem.</p>
+                </div>
+            </div>
+
+            <!-- Bloco 4: Engenharia Genética (Grande Horizontal) -->
+            <div class="bento-card bento-w2 reveal">
+                <div class="bento-media" style="background-image: url('https://unsplash.com');"></div>
+                <div class="bento-content">
+                    <span class="bento-tag">Ciência Regenerativa</span>
+                    <h3>Biotecnologia e Descarbonização</h3>
+                    <p>O cruzamento perfeito entre a biologia molecular e a eficiência agrícola, transformando grandes plantações em geradores de purificação de carbono em escala mundial.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. DATA VISUALIZATION HUB -->
+    <section class="metrics-section" id="telemetria">
+        <div class="matrix-grid">
+            <div class="matrix-card reveal">
+                <div class="matrix-number text-gradient" data-target="96">0%</div>
+                <div class="matrix-title">Eficiência de Frota</div>
+            </div>
+            <div class="matrix-card reveal">
+                <div class="matrix-number text-gradient" data-target="45">0%</div>
+                <div class="matrix-title">Redução de Emissões</div>
+            </div>
+            <div class="matrix-card reveal">
+                <div class="matrix-number text-gradient" data-target="250">0k</div>
+                <div class="matrix-title">Drones em Operação</div>
+            </div>
+            <div class="matrix-card reveal">
+                <div class="matrix-number text-gradient" data-target="18">0M</div>
+                <div class="matrix-title">Telemetrias / Minuto</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importação da engine lógica externa -->
+    <script src="script.js"></script>
+</body>
+</html>
